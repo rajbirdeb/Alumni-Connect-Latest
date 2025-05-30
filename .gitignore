@@ -1,0 +1,12 @@
+# Ignore backend node modules
+/backend/node_modules
+
+# Ignore frontend node modules
+/Frontend/node_modules
+
+# Ignore environment files
+/backend/.env
+/Frontend/.env
+
+# Optional: ignore build if React creates one
+/Frontend/build

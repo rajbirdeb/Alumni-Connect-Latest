@@ -1,0 +1,113 @@
+/* ViewEvent.css */
+
+.view-events-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+.view-events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.view-events-header h2 {
+  color: #008080; /* Teal */
+  font-size: 2rem;
+}
+
+.back-button {
+  background-color: #008080;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #006666;
+}
+
+.events-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-card {
+  background-color: #f9fdfd; /* Slight off-white */
+  border: 1px solid #e0f2f1;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 128, 128, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 128, 128, 0.2);
+}
+
+.event-card-header h3 {
+  color: #004d4d;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.event-card-body {
+  flex-grow: 1;
+}
+
+.event-description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.event-details {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #008080;
+}
+
+.event-card-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.register-button {
+  background-color: #008080;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #006666;
+}
+
+.loading,
+.error,
+.no-events {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+  color: #555;
+}
