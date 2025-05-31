@@ -1,0 +1,103 @@
+/* Container layout */
+.achievement-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f9fafb;
+  color: #1f2937;
+  transition: background-color 0.3s ease;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: #1f2937;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 18px;
+}
+
+/* Sidebar layout */
+.sidebar.open {
+  width: 250px;
+  transition: width 0.3s;
+}
+
+.sidebar.closed {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s;
+}
+
+/* Main content */
+.main-content {
+  flex-grow: 1;
+  padding: 40px 60px;
+  overflow-y: auto;
+}
+
+/* Header with button */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Post button */
+.post-achievement-btn {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+  transition: background-color 0.3s;
+}
+
+.post-achievement-btn:hover {
+  background-color: #1e40af;
+}
+
+/* Achievement card list */
+.achievement-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* Dark mode support */
+.dark .achievement-container {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+.dark .page-title {
+  color: #f9fafb;
+}
+
+.dark .post-achievement-btn {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.dark .post-achievement-btn:hover {
+  background-color: #1e40af;
+}
+
+.dark .main-content {
+  background-color: #1f2937;
+}
