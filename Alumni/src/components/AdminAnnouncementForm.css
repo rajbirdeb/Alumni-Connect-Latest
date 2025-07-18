@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0f7f5, #ffffff);
+  min-height: 100vh;
+}
+
+.admin-form-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 128, 128, 0.2);
+  border-left: 6px solid teal;
+  animation: fadeInUp 0.5s ease;
+}
+
+.admin-form-title {
+  color: teal;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.admin-form-group {
+  margin-bottom: 25px;
+}
+
+.admin-form-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #222;
+  font-size: 15px;
+}
+
+.admin-form-input,
+.admin-form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.admin-form-input:focus,
+.admin-form-textarea:focus {
+  border-color: teal;
+  box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.1);
+  outline: none;
+}
+
+.admin-form-button {
+  background-color: teal;
+  color: white;
+  padding: 14px 20px;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.admin-form-button:hover {
+  background-color: #006666;
+}
+
+/* Fade animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
