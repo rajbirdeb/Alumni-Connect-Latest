@@ -1,0 +1,74 @@
+/* Container */
+.achievement-container {
+  background-color: #f8fdfd; /* soft off-white */
+  max-width: 450px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0px 6px 15px rgba(0, 128, 128, 0.2);
+  font-family: 'Arial', sans-serif;
+  color: #004d4d;
+  border: 2px solid #009999;
+}
+
+/* Title */
+.achievement-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #007777;
+  margin-bottom: 1rem;
+}
+
+/* Message */
+.achievement-message {
+  text-align: center;
+  font-size: 1rem;
+  color: #008080;
+  margin-bottom: 1rem;
+}
+
+/* Form */
+.achievement-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Inputs and Textarea */
+.achievement-input,
+.achievement-textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #009999;
+  background-color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.achievement-input:focus,
+.achievement-textarea:focus {
+  border-color: #00cccc;
+  box-shadow: 0 0 8px rgba(0, 204, 204, 0.4);
+}
+
+/* Button */
+.achievement-button {
+  background-color: #009999;
+  color: #ffffff;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.achievement-button:hover {
+  background-color: #007777;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 128, 128, 0.3);
+}

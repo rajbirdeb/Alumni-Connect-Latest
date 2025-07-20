@@ -1,15 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const {
-  addJob,
-  bulkInsert,
-  getAllJobs,
-  getJobById
-} = require("../controllers/recruitmentController");
+const { addRecruitment, getRecruitments } = require("../controllers/recruitmentController");
 
-router.post("/", addJob);
-router.post("/bulk", bulkInsert);
-router.get("/", getAllJobs);
-router.get("/:id", getJobById);
+router.post("/", addRecruitment);
+router.get("/", getRecruitments);
 
 module.exports = router;

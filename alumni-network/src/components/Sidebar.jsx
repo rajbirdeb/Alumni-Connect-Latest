@@ -1,7 +1,7 @@
 import React from "react";
-import "./style.css";
+import "./Sidebar.css";
 
-const Sidebar = ({ onFilterChange }) => {
+const Sidebar = ({ filters, onFilterChange }) => {
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     onFilterChange((prev) => ({ ...prev, [name]: value }));
@@ -9,19 +9,27 @@ const Sidebar = ({ onFilterChange }) => {
 
   return (
     <div className="sidebar-container">
-      <h2>Filters</h2>
-      <label>Job Type:</label>
-      <select name="jobType" onChange={handleFilterChange}>
-        <option value="">All</option>
-        <option value="Full-Time">Full-Time</option>
-        <option value="Part-Time">Part-Time</option>
-      </select>
-
-      <label>Location:</label>
-      <input type="text" name="location" placeholder="Enter location" onChange={handleFilterChange} />
-
-      <label>Experience:</label>
-      <input type="number" name="experience" placeholder="Years of experience" onChange={handleFilterChange} />
+      <h2 className="sidebar-title">Filters</h2>
+      {filters.map((filter, index) => (
+        <div key={index} className="sidebar-filter">
+          <label className="sidebar-label">{filter.label}:</label>
+          {filter.type === "select" ? (
+            <select name={filter.name} onChange={handleFilterChange} className="sidebar-input">
+              {filter.options.map((option, idx) => (
+                <option key={idx} value={option.value}>{option.label}</option>
+              ))}
+            </select>
+          ) : (
+            <input
+              type={filter.type}
+              name={filter.name}
+              placeholder={filter.placeholder}
+              onChange={handleFilterChange}
+              className="sidebar-input"
+            />
+          )}
+        </div>
+      ))}
     </div>
   );
 };

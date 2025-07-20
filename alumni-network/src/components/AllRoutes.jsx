@@ -1,20 +1,23 @@
 import React from 'react'
 import {Routes,Route} from 'react-router-dom'
-import HomePage2 from '../pages/HomePage2'
-import Recruitment from '../pages/RecruitmentPages'
-import Achievements from '../pages/AchievementPages'
-import JobDetails from '../pages/jobDetails'
-
+import Home2 from '../pages/Home2'
+import RecruitmentList from '../pages/RecruitmentList'
+import PostRecruitment from '../pages/PostRecruitment'
+import AchievementList from '../pages/AchievementList'
+import PostAchievement from '../pages/PostAchievement'
+import Sidebar from '../components/Sidebar'
 
 const AllRoutes = () => {
   return (
     <>
         <Routes>
-          <Route path='/' element={<HomePage2/>}/>
-          <Route path='/recruitment' element={<Recruitment/>}/>
-          <Route path='/achievements' element={<Achievements/>}/>
-          <Route path="/recruitment/:id" element={<JobDetails />} />
-        </Routes>
+        <Route path="/" element={<Home2 />} />
+        <Route path="/recruitments" element={<RecruitmentList />} />
+        <Route path="/post-recruitment" element={<PostRecruitment />} />
+        <Route path="/achievements" element={<AchievementList />} />
+        <Route path="/post-achievement" element={<PostAchievement />} />
+        <Route path="/sidebar" element={<Sidebar/>}/>
+      </Routes>
     </>
   )
 }

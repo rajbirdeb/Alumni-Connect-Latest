@@ -1,0 +1,126 @@
+/* Container Styling */
+.achievement-container {
+  background-color: #f8faf9; /* Off-white background */
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading */
+.achievement-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #006d6d; /* Deep teal */
+  position: relative;
+}
+
+.achievement-heading::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #009e9e; /* Accent teal */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Grid Layout */
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Achievement Card */
+.achievement-card {
+  background-color: #ffffff; /* White card */
+  border: 1px solid #d1e7e7;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 109, 109, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 18px rgba(0, 109, 109, 0.2);
+}
+
+/* Title */
+.achievement-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #004d4d;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.achievement-description {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* Date */
+.achievement-date {
+  font-size: 0.9rem;
+  color: #008b8b;
+  margin-bottom: 8px;
+}
+
+/* Achieved By */
+.achievement-by {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #004d4d;
+}
+
+/* Loading Text */
+.loading-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #008b8b;
+  padding-top: 50px;
+}
+
+/* No achievements */
+.no-achievements {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #006d6d;
+  grid-column: 1 / -1;
+}
+.achievement-page {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+/* Same hamburger button style */
+.hamburger-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Sidebar styling (shared with recruitment) */
+.sidebar-container {
+  width: 250px;
+  background: #f5f5f5;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.achievement-container {
+  flex: 1;
+}

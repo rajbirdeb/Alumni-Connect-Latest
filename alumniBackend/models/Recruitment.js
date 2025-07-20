@@ -1,20 +1,21 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const recruitmentSchema = new mongoose.Schema({
-    jobTitle: { type: String, required: true },
-    company: { type: String, required: true },
-    location: { type: String, required: true },
-    jobType: {
-      type: String,
-      enum: ["full-time", "part-time", "contract", "internship", "freelance"],
-      required: true,
-      set: (value) => value.toLowerCase()  // This converts "Full-time" -> "full-time"
-    },
-    
-    description: { type: String, required: true },
-    requirements: { type: [String], required: true },
-    salary: { type: String },
-    postedAt: { type: Date, default: Date.now },
-});
+const recruitmentSchema = new mongoose.Schema(
+  {
+    title: { type: String, required: true },
+    companyName: { type: String, required: true },
+    location: String,
+    jobType: String,
+    workMode: String,
+    description: String,
+    skills: [String],
+    experienceLevel: String,
+    deadline: Date,
+    applicationLink: String,
+    contactEmail: String,
+    postedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('Recruitment', recruitmentSchema);
+module.exports = mongoose.model("Recruitment", recruitmentSchema);
