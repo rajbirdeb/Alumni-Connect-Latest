@@ -1,5 +1,7 @@
 # Alumni Network Connect - Recruitment & Achievements Sections
 
+> ✨ This project also integrates code from Rajbir's `Alumini-Connect` repository.
+
 This repository contains my completed contribution to the **Alumni Network Connect** project.  
 I developed the **Recruitment** and **Achievements** sections using **ReactJS with Vite** for fast performance and modern development.
 
@@ -34,11 +36,6 @@ These sections are now **fully functional on the frontend** and ready for integr
 
 To run the project locally:
 
-## 1. Clone the repository
+### 1. Clone the repository
+```bash
 git clone <repository-link>
-## 2. Navigate to the project folder
-cd alumni-network-connect
-## 3. Install dependencies
-npm install
-## 4. Start the development server
-npm run dev
