@@ -1,0 +1,124 @@
+/* Container */
+.recruitment-container {
+  background-color: #f8faf9; /* Off-white */
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading */
+.recruitment-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #006d6d;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.recruitment-heading::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #009e9e;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Job List Layout */
+.recruitment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Job Card Styling */
+.job-card {
+  background-color: #ffffff;
+  border: 1px solid #d1e7e7;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 109, 109, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 109, 109, 0.2);
+}
+
+/* Job Title */
+.job-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #004d4d;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.job-description {
+  margin-bottom: 10px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Apply Button */
+.apply-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background-color: #009e9e;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.apply-btn:hover {
+  background-color: #007777;
+}
+
+/* Loading and Error */
+.loading-text,
+.error-text,
+.no-jobs {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #006d6d;
+  margin-top: 30px;
+}
+.recruitment-page {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+/* Hamburger button */
+.hamburger-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* When sidebar is visible, add spacing */
+.sidebar-container {
+  width: 250px;
+  background: #f5f5f5;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.recruitment-container {
+  flex: 1;
+}

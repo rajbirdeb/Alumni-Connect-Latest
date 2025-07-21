@@ -1,1 +1,15 @@
+# Common
 node_modules
+
+# Ignore backend node modules
+/alumniBackend/node_modules
+
+# Ignore frontend node modules
+/alumni-network/node_modules
+
+# Ignore environment files
+/alumni-network/.env
+/alumniBackend/.env
+
+# Optional: ignore build if React creates one
+/alumni-network/build
