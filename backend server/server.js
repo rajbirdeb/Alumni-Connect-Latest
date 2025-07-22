@@ -29,7 +29,10 @@ const app = express();
 
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5173",  // No slash!
+  credentials: true,
+}));
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
@@ -296,6 +299,13 @@ app.put('/alumni/profile', auth, upload.single('profilePhoto'), async (req, res)
     res.status(500).json({ message: 'Failed to update profile', error: err.message });
   }
 });
+
+// recruitment and achievement routes
+app.use("/api/recruitments", require("./routes/recruitmentRoutes"));
+app.use("/api/achievements", require("./routes/achievementRoutes"));
+
+// annoucement route
+app.use('/api/announcements', require("./routes/announcementRoutes"));
 // Server Startup
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
