@@ -30,8 +30,11 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "http://localhost:5173",  // No slash!
-  credentials: true,
+  origin: [
+    "http://localhost:5173", // local Vite frontend
+    "https://alumni-connect-latest.vercel.app" // your deployed frontend
+  ],
+  credentials: true // if you use cookies or auth
 }));
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
