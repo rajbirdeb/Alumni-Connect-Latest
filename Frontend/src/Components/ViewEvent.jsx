@@ -9,7 +9,8 @@ const ViewEvents = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   
-  const baseURL = import.meta.env.VITE_BASE_URL;
+ const baseURL = import.meta.env.VITE_API_BASE_URL;
+
   const navigate = useNavigate();
 
   useEffect(() => {

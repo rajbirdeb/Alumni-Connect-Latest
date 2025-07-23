@@ -12,7 +12,7 @@ const ViewAlumni = () => {
   const role = localStorage.getItem('role');
   const userId = localStorage.getItem('userId');
 
-const baseURL = import.meta.env.VITE_API_BASE_URL;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 
 
