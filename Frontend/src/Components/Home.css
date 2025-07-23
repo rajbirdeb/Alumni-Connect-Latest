@@ -105,6 +105,7 @@ body {
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .hero h2 {
@@ -140,7 +141,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   color: white;
   padding: 3rem 2rem;
   text-align: left;
@@ -248,21 +249,21 @@ body {
     gap: 1rem;
     padding: 1rem;
   }
-  
+
   .logo {
     position: static;
     transform: none;
     margin-bottom: 1rem;
   }
-  
+
   .nav-links {
     margin-left: 0;
   }
-  
+
   .carousel-overlay h3 {
     font-size: 1.8rem;
   }
-  
+
   .carousel-overlay p {
     font-size: 1rem;
   }
