@@ -12,7 +12,8 @@ const ViewAlumni = () => {
   const role = localStorage.getItem('role');
   const userId = localStorage.getItem('userId');
 
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+
 
 
   const fetchAlumni = async () => {
@@ -58,7 +59,7 @@ const ViewAlumni = () => {
             <div className="alumni-card-header">
               {alum.profilePhoto ? (
                 <img 
-                  src={`${baseURL}${alum.profilePhoto}`}
+                  src={`${baseURL}${alum.profilePhoto}`} 
                   alt={alum.name} 
                   className="alumni-photo" 
                   onError={(e) => {
