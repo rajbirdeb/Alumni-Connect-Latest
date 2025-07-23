@@ -85,12 +85,14 @@ const EditProfile = () => {
         formDataToSend.append('profilePhoto', selectedFile);
       }
 
-      const response = await axios.put(`${baseURL}/alumni/profile`, formDataToSend, formDataToSend, {
+      const response = await axios.put(`${baseURL}/alumni/profile`, formDataToSend, {
         headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'multipart/form-data'
-        }
-      });
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data'
+  },
+              withCredentials: true // ✅ Optional, if you're sending cookies
+});
+
 
       console.log('Update successful:', response.data);
       navigate('/view-alumni', { 
