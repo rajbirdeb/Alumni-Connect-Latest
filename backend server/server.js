@@ -32,7 +32,7 @@ app.use(express.json());
 app.use(cors({
   origin: [
     "http://localhost:5173", // local Vite frontend
-    "https://alumni-connect-latest.vercel.app" // your deployed frontend
+     'https://alumni-connect-latest-2qd5v8gsm-rajbirdebs-projects.vercel.app' // your deployed frontend
   ],
   credentials: true // if you use cookies or auth
 }));
