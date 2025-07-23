@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CreateEvent.css';
 
+
+
 const CreateEvent = () => {
   const [eventData, setEventData] = useState({
     name: '',
@@ -10,6 +12,8 @@ const CreateEvent = () => {
     time: '',
     location: ''
   });
+  
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -30,7 +34,7 @@ const CreateEvent = () => {
         return;
       }
   
-      const response = await fetch('http://localhost:5000/events', {
+      const response = await fetch(`${baseURL}/events`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

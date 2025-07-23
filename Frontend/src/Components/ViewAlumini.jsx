@@ -12,11 +12,14 @@ const ViewAlumni = () => {
   const role = localStorage.getItem('role');
   const userId = localStorage.getItem('userId');
 
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
+
+
   const fetchAlumni = async () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/alumni', {
+      const response = await axios.get(`${baseURL}/alumni`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -55,7 +58,7 @@ const ViewAlumni = () => {
             <div className="alumni-card-header">
               {alum.profilePhoto ? (
                 <img 
-                  src={`http://localhost:5000${alum.profilePhoto}`} 
+                  src={`${baseURL}${alum.profilePhoto}`}
                   alt={alum.name} 
                   className="alumni-photo" 
                   onError={(e) => {

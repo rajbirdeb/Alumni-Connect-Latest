@@ -15,13 +15,15 @@ const EditProfile = () => {
   const [loading, setLoading] = useState(true);
   const [saveLoading, setSaveLoading] = useState(false);
   const [error, setError] = useState('');
+
+  const baseURL = import.meta.env.VITE_API_BASE_URL; // 🔧 Load backend base URL from environment
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/me', {
+        const res = await axios.get(`${baseURL}/me`, {
           headers: { Authorization: `Bearer ${token}` }
         });
 
@@ -33,7 +35,8 @@ const EditProfile = () => {
         });
 
         if (res.data.profilePhoto) {
-          setPreview(`http://localhost:5000${res.data.profilePhoto}`);
+          setPreview(`${baseURL}${res.data.profilePhoto}`);
+
         }
       } catch (err) {
         setError('Failed to fetch profile data');
@@ -82,7 +85,7 @@ const EditProfile = () => {
         formDataToSend.append('profilePhoto', selectedFile);
       }
 
-      const response = await axios.put('http://localhost:5000/alumni/profile', formDataToSend, {
+      const response = await axios.put(`${baseURL}/alumni/profile`, formDataToSend, formDataToSend, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'

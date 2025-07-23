@@ -8,6 +8,8 @@ const ViewEvents = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  
+  const baseURL = import.meta.env.VITE_BASE_URL;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,7 +24,7 @@ const ViewEvents = () => {
       try {
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         
-        const response = await axios.get('http://localhost:5000/events');
+        const response = await axios.get(`${baseURL}/events`);
         setEvents(response.data.events);
         setLoading(false);
       } catch (err) {
@@ -51,7 +53,8 @@ const ViewEvents = () => {
       }
 
       const response = await axios.post(
-        `http://localhost:5000/events/${eventId}/register`,
+        `${baseURL}/events/${eventId}/register`,
+
         { userId: localStorage.getItem('userId') },
         {
           headers: {

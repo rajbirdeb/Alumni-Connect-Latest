@@ -14,6 +14,7 @@ const Registration = () => {
     agreeToTerms: false,
   });
 
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -38,7 +39,7 @@ const Registration = () => {
     }
   
     try {
-      const response = await axios.post('http://localhost:5000/register', {
+      const response = await axios.post(`${baseURL}/register`, {
         ...formData,
         userType
       });

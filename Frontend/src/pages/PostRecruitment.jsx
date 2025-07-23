@@ -19,6 +19,8 @@ const PostRecruitment = () => {
   });
 
   const [message, setMessage] = useState("");
+  const baseURL = import.meta.env.VITE_BASE_URL;
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,7 +34,8 @@ const PostRecruitment = () => {
         ...formData,
         skills: formData.skills.split(",").map((s) => s.trim()), // convert comma string to array
       };
-      await axios.post("http://localhost:5000/api/recruitments", payload);
+      await axios.post(`${baseURL}/api/recruitments`, payload);
+
       setMessage("Job posted successfully!");
       setFormData({
         title: "",

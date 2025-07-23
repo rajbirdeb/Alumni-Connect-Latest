@@ -12,6 +12,8 @@ const RecruitmentList = () => {
     experience: ""
   });
   const [sidebarOpen, setSidebarOpen] = useState(true); // Sidebar toggle state
+  const baseURL = import.meta.env.VITE_BASE_URL;
+
 
   const recruitmentFilters = [
     {
@@ -41,9 +43,8 @@ const RecruitmentList = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch(
-          "http://localhost:5000/api/recruitments?page=1&limit=10"
-        );
+        const res = await fetch(`${baseURL}/api/recruitments?page=1&limit=10`);
+
         if (!res.ok) throw new Error(`HTTP Error! status: ${res.status}`);
 
         const data = await res.json();

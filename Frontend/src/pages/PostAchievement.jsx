@@ -11,6 +11,8 @@ const PostAchievement = () => {
   });
 
   const [message, setMessage] = useState("");
+  const baseURL = import.meta.env.VITE_BASE_URL;
+
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -19,7 +21,8 @@ const PostAchievement = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/achievements", form);
+      await axios.post(`${baseURL}/api/achievements`, form);
+
       setMessage("Achievement posted successfully!");
       setForm({ title: "", description: "", date: "", achievedBy: "" });
     } catch (err) {

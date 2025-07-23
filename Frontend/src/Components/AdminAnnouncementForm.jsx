@@ -15,7 +15,9 @@ const AdminAnnouncementForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/announcements', formData);
+      const baseURL = import.meta.env.VITE_API_BASE_URL;
+      await axios.post(`${baseURL}/api/announcements`, formData);
+
       alert('Announcement created successfully!');
       setFormData({ title: '', description: '' });
     } catch (error) {

@@ -4,9 +4,10 @@ import './AnnouncementPage.css';
 
 const AnnouncementPage = () => {
   const [announcements, setAnnouncements] = useState([]);
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/announcements')
+     axios.get(`${baseURL}/api/announcements`)
       .then(res => setAnnouncements(res.data))
       .catch(err => console.error(err));
   }, []);
